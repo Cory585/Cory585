@@ -25,7 +25,7 @@ Stack: Next.js · React · TypeScript · TailwindCSS · FastAPI · MediaPipe · 
 
 ### RateMyHusky
 
-[GitHub](https://github.com/gRain-is-grainy/RateMyHusky) · [ratemyhusky.com](https://ratemyhusky.com)
+[GitHub](https://github.com/Cory585/RateMyHusky) · [ratemyhusky.com](https://ratemyhusky.com)
 
 — Oasis @ Northeastern
 
