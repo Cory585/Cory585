@@ -8,7 +8,7 @@ Cybersecurity @ Northeastern University (2029) | New York
 
 ## Public Projects
 
-<img width="80" height="80" alt="logo" src="https://github.com/user-attachments/assets/afe83008-b1b7-4a34-b85f-8b11fa29f5fb" />
+<img width="120" height="120" alt="logo" src="https://github.com/user-attachments/assets/afe83008-b1b7-4a34-b85f-8b11fa29f5fb" />
 
 — Babson 2026 Hackathon
 
@@ -23,7 +23,9 @@ Stack: Next.js · React · TypeScript · TailwindCSS · FastAPI · MediaPipe · 
 
 ---
 
-**RateMyHusky**
+### RateMyHusky
+
+[GitHub](https://github.com/gRain-is-grainy/RateMyHusky) · [ratemyhusky.com](https://ratemyhusky.com)
 
 — Oasis @ Northeastern
 
