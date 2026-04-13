@@ -4,7 +4,7 @@ Cybersecurity @ Northeastern University (2029) | New York
 -----
 ## Public Projects
 
-<img width="45" height="43" alt="logo" src="https://github.com/user-attachments/assets/afe83008-b1b7-4a34-b85f-8b11fa29f5fb" style="vertical-align:middle;" /> — Babson 2026 Hackathon
+<img width="80" height="80" alt="logo" src="https://github.com/user-attachments/assets/afe83008-b1b7-4a34-b85f-8b11fa29f5fb" style="vertical-align:middle;" /> 
  — Babson 2026 Hackathon
 AI-powered weightlifting form analysis built in 8 hours — upload a lift video, get biomechanically-validated coaching feedback compared against professional references.
 
