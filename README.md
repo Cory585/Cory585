@@ -1,6 +1,5 @@
 # Hey, I'm Cory Pierson
 
----
 
 Cybersecurity @ Northeastern University (2029) | New York
 
