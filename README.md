@@ -1,13 +1,13 @@
 # Hey, I'm Cory Pierson
 
 
-Cybersecurity @ ![Northeastern](https://img.shields.io/badge/Northeastern-CC0000?style=flat) Northeastern University (2029) | New York
+Cybersecurity @ Northeastern University (2029) | New York
 
 ---
 
 ## Public Projects
 
-### Momentum
+$${\color{lightblue}Momentum}$$
 
 — Babson 2026 Hackathon
 
@@ -29,7 +29,7 @@ AI-powered weightlifting form analysis built in 8 hours; Upload a lift video, ge
 
 ---
 
-### RateMyHusky
+$${\color{lightblue}RateMyHusky}$$
 
 [GitHub](https://github.com/Cory585/RateMyHusky) · [ratemyhusky.com](https://ratemyhusky.com)
 
