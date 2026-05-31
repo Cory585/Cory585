@@ -35,7 +35,7 @@ ${\color{lightblue}\textbf{\huge RateMyHusky}}$
 
 — Oasis @ Northeastern
 
-Comprehensive professor discovery platform for Northeastern students — search, filter, and compare professors using aggregated RateMyProfessors ratings and TRACE course evaluation data.
+Comprehensive professor discovery platform for Northeastern students. Includes search, filter, and compare professors using aggregated RateMyProfessors ratings and TRACE course evaluation data.
 
 - Custom scrapers pull RMP ratings, TRACE scores, student comments, and professor photos into a unified CockroachDB database
 - Side-by-side professor comparison with per-metric breakdowns to inform course selection decisions
