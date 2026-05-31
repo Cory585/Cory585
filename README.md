@@ -7,7 +7,7 @@ Cybersecurity @ Northeastern University (2029) | New York
 
 ## Public Projects
 
-${\color{lightblue}\textbf{\huge Momentum}}$
+#${\color{lightblue}\textbf{\HUGE Momentum}}$
 
 — Babson 2026 Hackathon
 
