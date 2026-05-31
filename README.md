@@ -7,7 +7,7 @@ Cybersecurity @ Northeastern University (2029) | New York
 
 ## Public Projects
 
-#${\color{lightblue}\textbf{\HUGE Momentum}}$
+${\color{lightblue}\textbf{\HUGE Momentum}}$
 
 — Babson 2026 Hackathon
 
@@ -29,7 +29,7 @@ AI-powered weightlifting form analysis built in 8 hours; Upload a lift video, ge
 
 ---
 
-${\color{lightblue}\textbf{\huge RateMyHusky}}$
+${\color{lightblue}\textbf{\HUGE RateMyHusky}}$
 
 [GitHub](https://github.com/Cory585/RateMyHusky) · [ratemyhusky.com](https://ratemyhusky.com)
 
