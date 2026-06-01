@@ -1,6 +1,7 @@
 # Hey, I'm Cory Pierson
 
-
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?logo=linkedin&logoColor=white&style=flat-square)](https://www.linkedin.com/in/cory-pierson-15925a384/)
+[![Email](https://img.shields.io/badge/-Email-EA4335?logo=gmail&logoColor=white&style=flat-square)](mailto:pierson.c@northeastern.edu)
 Cybersecurity @ Northeastern University (2029) | New York
 
 ---
@@ -8,6 +9,8 @@ Cybersecurity @ Northeastern University (2029) | New York
 ## Public Projects
 
 ${\color{lightblue}\textbf{\huge Momentum}}$
+
+[GitHub](https://github.com/Cory585/babson26)
 
 — Babson 2026 Hackathon
 
