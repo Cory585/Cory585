@@ -13,7 +13,7 @@ ${\color{lightblue}\textbf{\huge Momentum}}$
 
 [GitHub](https://github.com/Cory585/babson26)
 
-— Babson 2026 Hackathon
+— Babson 2026 Hackathon (Semi-Finalist)
 
 AI-powered weightlifting form analysis built in 8 hours; Upload a lift video, get biomechanically-validated coaching feedback compared against professional references.
 
@@ -39,12 +39,31 @@ ${\color{lightblue}\textbf{\huge RateMyHusky}}$
 
 — Oasis @ Northeastern
 
-Comprehensive professor discovery platform for Northeastern students. Includes search, filter, and compare professors using aggregated RateMyProfessors ratings and TRACE course evaluation data.
+Professor discovery platform for Northeastern 
+students, covering 9,300+ professors. Aggregates RateMyProfessors
+ratings, and Reddit discussion into a single profile per professor, then layers search,
+filtering, and side-by-side comparison on top. React 19 + TypeScript on Vercel, Flask on
+Railway, CockroachDB Serverless. AGPL-3.0.
 
-- Custom scrapers pull RMP ratings, TRACE scores, student comments, and professor photos into a unified CockroachDB database
-- Side-by-side professor comparison with per-metric breakdowns to inform course selection decisions
-- Smart search with autocomplete across professors and courses, plus shuffle-based discovery
-- Google OAuth 2.0 authentication with rate-limited API and compressed responses for fast load times
+- *Data pipeline*: Three custom Python scrapers (a resumable term-by-term Bluera
+  crawler with parallel report downloads, plus RMP and Reddit) feeding 1.7M+ student
+  comments, 43K+ ratings, and ~9K Reddit mentions into a unified CockroachDB schema
+- **Entity resolution*: Layered professor-mention matcher using calibration, surname
+  stoplists, and thread anchoring to suppress Reddit false positives; per-mention sentiment
+  scoring; automated facial focal-point detection so 3,700+ scraped photos crop correctly
+- **Product surface*: Professor, course, and department hubs; autocomplete search with
+  shuffle-based discovery; side-by-side compare with per-metric breakdowns; top-rated
+  leaderboard; rating-history, radar, and grade-distribution charts; dark mode
+- **SEO / AEO engineering*: Flask-rendered crawler snapshots carrying
+  WebSite/ItemList/ProfilePage/Course JSON-LD, prebuild sitemap generation, edge middleware
+  that routes bots to prerendered HTML behind an SSRF guard, `llms.txt`, and Bing IndexNow
+  push indexing
+- **Retrieval evaluation*: Offline harness scoring the retrieval layer against
+  human-labeled relevance judgments (nDCG@k, recall@k, MRR, precision@k) with a local
+  labeling UI, a curated question set, and run-over-run comparison
+- **Platform & delivery*: Google OAuth 2.0 + JWT accounts with bookmarks, rate-limited
+  and compressed API, precomputed catalog aggregates, and GitHub Actions CI (build, lint,
+  pytest, gitleaks full-history secret scan)
 
 ![React](https://img.shields.io/badge/React_19-61DAFB?logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
