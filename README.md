@@ -48,20 +48,20 @@ Railway, CockroachDB Serverless. AGPL-3.0.
 - *Data pipeline*: Three custom Python scrapers (a resumable term-by-term Bluera
   crawler with parallel report downloads, plus RMP and Reddit) feeding 1.7M+ student
   comments, 43K+ ratings, and ~9K Reddit mentions into a unified CockroachDB schema
-- **Entity resolution*: Layered professor-mention matcher using calibration, surname
+- *Entity resolution*: Layered professor-mention matcher using calibration, surname
   stoplists, and thread anchoring to suppress Reddit false positives; per-mention sentiment
   scoring; automated facial focal-point detection so 3,700+ scraped photos crop correctly
-- **Product surface*: Professor, course, and department hubs; autocomplete search with
+- *Product surface*: Professor, course, and department hubs; autocomplete search with
   shuffle-based discovery; side-by-side compare with per-metric breakdowns; top-rated
   leaderboard; rating-history, radar, and grade-distribution charts; dark mode
-- **SEO / AEO engineering*: Flask-rendered crawler snapshots carrying
+- *SEO / AEO engineering*: Flask-rendered crawler snapshots carrying
   WebSite/ItemList/ProfilePage/Course JSON-LD, prebuild sitemap generation, edge middleware
   that routes bots to prerendered HTML behind an SSRF guard, `llms.txt`, and Bing IndexNow
   push indexing
-- **Retrieval evaluation*: Offline harness scoring the retrieval layer against
+- *Retrieval evaluation*: Offline harness scoring the retrieval layer against
   human-labeled relevance judgments (nDCG@k, recall@k, MRR, precision@k) with a local
   labeling UI, a curated question set, and run-over-run comparison
-- **Platform & delivery*: Google OAuth 2.0 + JWT accounts with bookmarks, rate-limited
+- *Platform & delivery*: Google OAuth 2.0 + JWT accounts with bookmarks, rate-limited
   and compressed API, precomputed catalog aggregates, and GitHub Actions CI (build, lint,
   pytest, gitleaks full-history secret scan)
 
