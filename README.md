@@ -45,8 +45,7 @@ ratings, and Reddit discussion into a single profile per professor, then layers 
 filtering, and side-by-side comparison on top. React 19 + TypeScript on Vercel, Flask on
 Railway, CockroachDB Serverless. AGPL-3.0.
 
-- *Data pipeline*: Three custom Python scrapers (a resumable term-by-term Bluera
-  crawler with parallel report downloads, plus RMP and Reddit) 43K+ ratings, and ~9K Reddit mentions into a unified CockroachDB schema
+- *Data pipeline*: Two custom Python scrapers (for RMP and Reddit) 43K+ ratings, and ~9K Reddit mentions into a unified CockroachDB schematic
 - *Entity resolution*: Layered professor-mention matcher using calibration, surname
   stoplists, and thread anchoring to suppress Reddit false positives; per-mention sentiment
   scoring; automated facial focal-point detection so 3,700+ scraped photos crop correctly
