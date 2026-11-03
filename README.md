@@ -35,54 +35,49 @@ AI-powered weightlifting form analysis built in 8 hours; Upload a lift video, ge
 
 ${\color{lightblue}\textbf{\huge RateMyHusky}}$
 
-[GitHub](https://github.com/Cory585/RateMyHusky) · [ratemyhusky.com](https://ratemyhusky.com)
+[GitHub](https://github.com/RateMyHusky/RateMyHusky) · [ratemyhusky.com](https://ratemyhusky.com)
 
-**Oasis @ Northeastern**
+**Oasis @ Northeastern · Team project**
 
-Professor discovery platform for Northeastern 
-students, covering 9,300+ professors. Aggregates RateMyProfessors
-ratings, and Reddit discussion into a single profile per professor, then layers search,
-filtering, and side-by-side comparison on top. React 19 + TypeScript on Vercel, Flask on
-Railway, CockroachDB Serverless. AGPL-3.0.
+A professor and course discovery site for Northeastern students, with pages for about 9,300 professors. Each professor gets one profile that combines RateMyProfessors ratings, Reddit discussion, Northeastern's course schedule (every term since Fall 2021), the course catalog, and teaching awards. Search, filtering and side-by-side comparison sit on top. React 19 + TypeScript on Vercel, Flask on Railway, PostgreSQL 16 + pgvector on an Oracle Cloud VM. AGPL-3.0.
 
-- *Data pipeline*: Two custom Python scrapers (for RMP and Reddit) 43K+ ratings, and ~9K Reddit mentions into a unified CockroachDB schema
-- *Entity resolution*: Layered professor-mention matcher using calibration, surname
-  stoplists, and thread anchoring to suppress Reddit false positives; per-mention sentiment
-  scoring; automated facial focal-point detection so 3,700+ scraped photos crop correctly
-- *Product surface*: Professor, course, and department hubs; autocomplete search with
-  shuffle-based discovery; side-by-side compare with per-metric breakdowns; top-rated
-  leaderboard; rating-history, radar, and grade-distribution charts; dark mode
-- *SEO / AEO engineering*: Flask-rendered crawler snapshots carrying
-  WebSite/ItemList/ProfilePage/Course JSON-LD, prebuild sitemap generation, edge middleware
-  that routes bots to prerendered HTML behind an SSRF guard, `llms.txt`, and Bing IndexNow
-  push indexing
-- *Retrieval evaluation*: Offline harness scoring the retrieval layer against
-  human-labeled relevance judgments (nDCG@k, recall@k, MRR, precision@k) with a local
-  labeling UI, a curated question set, and run-over-run comparison
-- *Platform & delivery*: Google OAuth 2.0 + JWT accounts with bookmarks, rate-limited
-  and compressed API, precomputed catalog aggregates, and GitHub Actions CI (build, lint,
-  pytest, gitleaks full-history secret scan)
+**What I built**
+- *Security hardening*: Read the real client IP behind the proxy, compared the proxy key in constant time, closed login CSRF and shortened session tokens, added a report-only Content-Security-Policy with a violation-report endpoint, validated paging and search input, rendered only http(s) links from scraped data, put CAPTCHA and per-IP limits on the feedback and rating forms, and deleted AI query logs after 30 days
+- *Accounts & auth*: Built bookmarks end to end: a backend module, Flask routes, a React context with optimistic updates, and a bookmarks page. Fixed Google sign-in so it only redirects to paths on the site, stays in sync across open tabs, and completes when started in two tabs
+- *Compare*: Reworked the side-by-side compare table: per-metric best and second-best picks, tie handling, rating-count bars, and clear marking for professors with too few ratings to rank
+
+**The platform**
+- *Data pipeline*: Custom Python scrapers for RateMyProfessors, Reddit, the NUBanner course schedule and the course catalog. They load 43K+ ratings and about 9K Reddit mentions into one PostgreSQL schema, which precompute jobs rebuild on scheduled GitHub Actions
+- *Entity resolution*: A layered matcher (calibration, surname stoplists, thread anchoring) keeps false matches out of the Reddit mentions it links to professors. Each mention gets a sentiment score, and automatic face focal-point detection makes about 2,000 professor photos crop correctly
+- *Product*: Professor, course and department pages, autocomplete search, side-by-side compare, a top-rated leaderboard, rating-history, radar and grade-distribution charts, dark mode, and a moderated student rating form
+- *AI search (paused)*: Hybrid retrieval that fuses full-text search with BGE-small embeddings using Reciprocal Rank Fusion, guarded against prompt injection, plus an offline evaluation harness (nDCG@k, recall@k, MRR) built on human-labeled relevance judgments
+- *SEO*: Flask-rendered snapshots for crawlers with JSON-LD, edge middleware that sends bots to the prerendered HTML behind an SSRF guard, a sitemap generated at build time, `llms.txt`, and Bing IndexNow
+- *Delivery*: A rate-limited, compressed API and GitHub Actions CI (build, lint, pytest, and a gitleaks secret scan of the full history)
 
 ![React](https://img.shields.io/badge/React_19-61DAFB?logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
-![React Router](https://img.shields.io/badge/React_Router_7-CA4245?logo=reactrouter&logoColor=white)
-![Recharts](https://img.shields.io/badge/Recharts-FF6384)
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-000000?logo=flask&logoColor=white)
-![CockroachDB](https://img.shields.io/badge/CockroachDB-6933FF?logo=cockroachlabs&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL_16-4169E1?logo=postgresql&logoColor=white)
 ![Google OAuth](https://img.shields.io/badge/Google_OAuth_2.0-4285F4?logo=google&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white)
-<!--
-**Cory585/Cory585** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?logo=githubactions&logoColor=white)
 
-Here are some ideas to get you started:
+---
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+${\color{lightblue}\textbf{\huge Password Manager}}$
+
+[GitHub](https://github.com/Cory585/Password-Manager-Project)
+
+A command-line password manager that keeps credentials in a local, encrypted SQLite vault, unlocked by one master password that is never stored.
+
+- *Master password*: Hashed with Argon2id, never stored in plaintext
+- *Per-entry keys*: Each entry has its own random 16-byte salt, and PBKDF2-HMAC-SHA256 (480,000 iterations) derives a separate 32-byte key for it, so no two entries share a key
+- *Encryption*: AES-256-GCM with a fresh 12-byte nonce on every write. The authentication tag catches tampering on decrypt
+- *CLI*: `init`, `add`, `get`, `list`, `delete`, and a secure random password generator
+
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?logo=sqlite&logoColor=white)
+![AES-256-GCM](https://img.shields.io/badge/AES--256--GCM-555555)
+![Argon2id](https://img.shields.io/badge/Argon2id-555555)
