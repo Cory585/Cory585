@@ -32,6 +32,22 @@ A professor and course discovery site for Northeastern students, with pages for 
 <a href="https://ratemyhusky.com/compare?a=kaan-onarlioglu&b=john-rachlin&c=elena-strange"><img src="assets/rmh-compare.png" alt="RateMyHusky compare view: three professors side by side with best and second-best picks per metric" width="700"></a>
 
 <details>
+<summary><b>Architecture</b></summary>
+
+```mermaid
+flowchart LR
+  U[Browser] --> V[Vercel<br/>React 19 + edge middleware]
+  V -->|crawlers| P[Prerendered HTML<br/>JSON-LD]
+  V -->|/api| F[Flask on Railway<br/>rate-limited, compressed]
+  P -.->|snapshot via SSRF guard| F
+  F --> DB[(PostgreSQL 16 + pgvector<br/>Oracle Cloud VM)]
+  GA[GitHub Actions<br/>scheduled] -->|scrapers + precompute| DB
+  S[RateMyProfessors · Reddit<br/>NUBanner · catalog] --> GA
+```
+
+</details>
+
+<details>
 <summary><b>What I built</b></summary>
 
 - *Proxy & session security*: Resolved the real client IP behind the proxy, compared the proxy key in constant time, fixed login CSRF, and shortened session tokens
