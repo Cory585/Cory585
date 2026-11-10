@@ -1,4 +1,6 @@
 # Hey, I'm Cory Pierson
+
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&pause=1200&color=D93A4C&vCenter=true&width=460&lines=Cybersecurity+%40+Northeastern;Building+RateMyHusky;Applied+crypto+%2B+web+security)](https://github.com/Cory585)
  
 Cybersecurity @ Northeastern University (2029) | New York -> Massachusetts
  
