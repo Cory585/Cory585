@@ -111,6 +111,41 @@ AI-powered weightlifting form analysis built in 8 hours. Upload a lift video and
 ![Google Gemini](https://img.shields.io/badge/Google_Gemini-8E75B2?logo=googlegemini&logoColor=white&style=flat-square)
 
 <details>
+<summary><b>Architecture</b></summary>
+
+**System**
+
+```mermaid
+flowchart LR
+  U[Browser] --> N[Next.js 16<br/>React 19 + Tailwind]
+  N -->|POST /api/analyze<br/>video + lift type| F[FastAPI]
+  F --> ML[MediaPipe + OpenCV<br/>pose, phases, scoring]
+  F --> AG[Agent pipeline]
+  AG <--> G[Google Gemini]
+  ML --> D[(Local storage<br/>references + results)]
+  AG --> D
+  N -->|GET results<br/>+ annotated videos| F
+```
+
+**Analysis pipeline**
+
+```mermaid
+flowchart LR
+  V[Lift video] --> P[MediaPipe pose<br/>33 landmarks/frame]
+  P --> PH[Phase detection<br/>setup → lockout]
+  PH --> S[Score vs. all<br/>pro references<br/>0–100 per phase]
+  S --> C[Coaching generator<br/>Gemini drafts cards]
+  C --> HV{Validator<br/>checks claims vs.<br/>angle deltas}
+  HV -->|supported| RF[Reference finder<br/>pro clip timestamp]
+  HV -->|partial: rewritten| RF
+  HV -->|unsupported: flagged| RF
+  RF --> R[Results<br/>synced replay +<br/>skeleton overlay]
+  S --> R
+```
+
+</details>
+
+<details>
 <summary><b>How it works</b></summary>
 
 - *MediaPipe*: Extracts pose keypoints frame by frame and detects lift phases (setup → descent → bottom → lockout)
