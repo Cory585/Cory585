@@ -29,8 +29,6 @@ A professor and course discovery site for Northeastern students, with pages for 
 ![Vercel](https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white&style=flat-square)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?logo=githubactions&logoColor=white&style=flat-square)
 
-<a href="https://ratemyhusky.com/compare?a=kaan-onarlioglu&b=john-rachlin&c=elena-strange"><img src="assets/rmh-compare.png" alt="RateMyHusky compare view: three professors side by side with best and second-best picks per metric" width="700"></a>
-
 <details>
 <summary><b>Architecture</b></summary>
 
