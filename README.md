@@ -70,29 +70,6 @@ flowchart LR
 
 ---
 
-### <img src="assets/password-manager.svg" alt="" height="32" align="center"> Password Manager
-
-[GitHub](https://github.com/Cory585/Password-Manager-Project)
-
-A command-line password manager that keeps credentials in a local, encrypted SQLite vault, unlocked by a single master password.
-
-![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white&style=flat-square)
-![SQLite](https://img.shields.io/badge/SQLite-003B57?logo=sqlite&logoColor=white&style=flat-square)
-![AES-256-GCM](https://img.shields.io/badge/AES--256--GCM-555555?style=flat-square)
-![Argon2id](https://img.shields.io/badge/Argon2id-555555?style=flat-square)
-
-<details>
-<summary><b>Details</b></summary>
-
-- *Master password*: Hashed with Argon2id; the plaintext is never written to disk
-- *Per-entry keys*: Each entry has its own random 16-byte salt, and PBKDF2-HMAC-SHA256 (480,000 iterations) derives a separate 32-byte key for it, so no two entries share a key
-- *Encryption*: AES-256-GCM with a fresh 12-byte nonce on every write. The authentication tag catches tampering on decrypt
-- *CLI*: `init`, `add`, `get`, `list`, `delete`, and a secure random password generator
-
-</details>
-
----
-
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="assets/momentum-light.png"><img src="assets/momentum-dark.png" alt="Momentum" height="26"></picture>
 
 [GitHub](https://github.com/Cory585/babson26)
@@ -152,5 +129,28 @@ flowchart LR
 - *Scoring*: Weighted joint angles (knee, hip, back, ankle) produce a 0–100 similarity score across phases
 - *Three-agent pipeline*: Gemini generates coaching cards, a hallucination validator fact-checks every claim against raw angle data, and a reference finder links each issue to the exact timestamp in the pro footage
 - *UI*: Side-by-side synced video player with skeleton overlay and per-phase score breakdown
+
+</details>
+
+---
+
+### <img src="assets/password-manager.svg" alt="" height="32" align="center"> Password Manager
+
+[GitHub](https://github.com/Cory585/Password-Manager-Project)
+
+A command-line password manager that keeps credentials in a local, encrypted SQLite vault, unlocked by a single master password.
+
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white&style=flat-square)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?logo=sqlite&logoColor=white&style=flat-square)
+![AES-256-GCM](https://img.shields.io/badge/AES--256--GCM-555555?style=flat-square)
+![Argon2id](https://img.shields.io/badge/Argon2id-555555?style=flat-square)
+
+<details>
+<summary><b>Details</b></summary>
+
+- *Master password*: Hashed with Argon2id; the plaintext is never written to disk
+- *Per-entry keys*: Each entry has its own random 16-byte salt, and PBKDF2-HMAC-SHA256 (480,000 iterations) derives a separate 32-byte key for it, so no two entries share a key
+- *Encryption*: AES-256-GCM with a fresh 12-byte nonce on every write. The authentication tag catches tampering on decrypt
+- *CLI*: `init`, `add`, `get`, `list`, `delete`, and a secure random password generator
 
 </details>
